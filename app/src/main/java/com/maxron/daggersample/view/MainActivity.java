@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         Car car = new Car();
-        man = new Man(car);
+        man = new Man();
+        man.setCar(car);
         textView.setText(man.carBrand());
     }
 }

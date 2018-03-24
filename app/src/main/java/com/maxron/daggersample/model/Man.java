@@ -7,7 +7,10 @@ package com.maxron.daggersample.model;
 public class Man {
     private Car car;
 
-    public Man(Car car) {
+    public Man() {
+    }
+
+    public void setCar(Car car) {
         this.car = car;
     }
 
