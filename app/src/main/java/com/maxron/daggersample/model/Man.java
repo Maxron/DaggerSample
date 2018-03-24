@@ -1,21 +1,21 @@
 package com.maxron.daggersample.model;
 
+import javax.inject.Inject;
+
 /**
  * Created by maxron on 2018/3/24.
  */
 
-public class Man implements CarInjector{
+public class Man {
     private Car car;
 
-    public Man() {
+    @Inject
+    public Man(Car car) {
+        this.car = car;
     }
 
     public String carBrand() {
         return this.car.brand();
     }
 
-    @Override
-    public void injectCar(Car car) {
-        this.car = car;
-    }
 }
