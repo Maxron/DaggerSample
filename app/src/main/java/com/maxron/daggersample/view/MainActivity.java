@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.maxron.daggersample.R;
+import com.maxron.daggersample.model.Car;
 import com.maxron.daggersample.model.Man;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        man = new Man();
+        Car car = new Car();
+        man = new Man(car);
         textView.setText(man.carBrand());
     }
 }

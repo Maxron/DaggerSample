@@ -7,8 +7,8 @@ package com.maxron.daggersample.model;
 public class Man {
     private Car car;
 
-    public Man() {
-        this.car = new Car();
+    public Man(Car car) {
+        this.car = car;
     }
 
     public String carBrand() {
