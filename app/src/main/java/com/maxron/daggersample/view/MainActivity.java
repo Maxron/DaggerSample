@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         Car car = new Car();
         man = new Man();
-        man.setCar(car);
+        man.injectCar(car);
         textView.setText(man.carBrand());
     }
 }
