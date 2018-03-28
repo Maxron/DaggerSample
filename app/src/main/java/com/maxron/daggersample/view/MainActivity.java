@@ -2,6 +2,7 @@ package com.maxron.daggersample.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.maxron.daggersample.R;
@@ -9,12 +10,16 @@ import com.maxron.daggersample.model.Man;
 
 import javax.inject.Inject;
 
+import dagger.Lazy;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
 
+    // @Inject
+    // Man man;
     @Inject
-    Man man;
+    Lazy<Man> manLazy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
          * Therefor, you should run "build" before write down this line.
          */
         DaggerMainActivityComponent.create().inject(this);
+        // textView.setText(man.carBrand());
+    }
+
+    public void onButtonClicked(View view) {
+        Man man = manLazy.get();
         textView.setText(man.carBrand());
     }
 }
