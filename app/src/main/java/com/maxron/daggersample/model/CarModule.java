@@ -1,7 +1,5 @@
 package com.maxron.daggersample.model;
 
-import javax.inject.Named;
-
 import dagger.Module;
 import dagger.Provides;
 
@@ -13,13 +11,13 @@ import dagger.Provides;
 public class CarModule {
 
     @Provides
-    @Named("Tesla")
+    @Tesla
     public Car provideTesla() {
         return new TeslaCar();
     }
 
     @Provides
-    @Named("AustonMartin")
+    @AustonMartin
     public Car provideAustonMartin() {
         return new AustonMartinCar();
     }
